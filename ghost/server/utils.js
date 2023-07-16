@@ -1,24 +1,21 @@
-import debuger from 'debug';
-import { server } from './init.js';
+import { createError, server } from '../app/init.js';
+import { debug } from '../app/init.js';
 
-const debug = debuger('express-local-library-site:server');
+const create404Error = () =>{
+	return createError(404)
+}
 
 const normalizePort = (val) =>{
-    const port = parseInt(val, 10);
-    
-    if (isNaN(port)) {
-      return val;
-    }
-    
-    if (port >= 0) {
-      return port;
-    }
-    
-    return false;
-  }
+	const port = parseInt(val, 10);
+
+	if (isNaN(port)) 
+		return val;
+
+	if (port >= 0) 
+		return port;
+	return false;
+}
   
-
-
 const onError = (error) =>{
     if (error.syscall !== 'listen') {
         throw error;
@@ -50,4 +47,7 @@ const onListening = () =>{
         debug('Listening on ' + bind);
 }
 
-export { normalizePort, onError, onListening }
+export { 
+	normalizePort, onError, onListening, 
+	server, create404Error 
+}

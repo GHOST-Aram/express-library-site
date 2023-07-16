@@ -1,8 +1,7 @@
-import express from 'express'
-const router = express.Router();
+import { router } from "../../ghost/app/init.js";
 
 /* GET home page. */
-router.get('/', (req, res, next) =>{
+router.get('/', (req, res) =>{
   res.render('catalog/index', { title: 'Express' });
 });
 

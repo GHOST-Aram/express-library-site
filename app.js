@@ -1,29 +1,17 @@
-import createHttpError from 'http-errors';
-import  express  from 'express';
-import cookieParser from 'cookie-parser';
-import morgan from 'morgan';
+import { app } from './ghost/app/init.js';
+import { create404Error } from './ghost/server/utils.js';
 import { router as indexRouter } from './catalog/routes/index.js'
 import { router as usersRouter } from './catalog/routes/users.js'
+import { config } from './ghost/app/config.js';
 
 
-const app = express();
-
-// view engine setup
-app.set('views', 'templates');
-app.set('view engine', 'pug');
-
-app.use(morgan('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static('static'));
-
+config()
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) =>{
-  	next(createHttpError(404));
+  	next(create404Error());
 });
 
 // error handler

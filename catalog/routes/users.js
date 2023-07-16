@@ -1,6 +1,5 @@
-import express from 'express'
+import { router } from "../../ghost/app/init.js";
 
-const router = express.Router();
 
 router.get('/', (req, res) =>{
   res.send('respond with a resource');
