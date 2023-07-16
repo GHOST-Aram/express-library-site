@@ -7,6 +7,7 @@ import debuger from 'debug';
 
 
 const app = express()
+const use = app.use
 const router = express.Router()
 const server = http.createServer(app);
 const logger = morgan
@@ -18,5 +19,5 @@ const createError = createHttpError
 export {
     app, router, server, express, 
     cookieParser, logger, debug,
-    createError
+    createError, use
 }

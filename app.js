@@ -1,13 +1,11 @@
 import { app } from './ghost/app/init.js';
-import { create404Error } from './ghost/server/utils.js';
-import { router as indexRouter } from './catalog/routes/index.js'
-import { router as usersRouter } from './catalog/routes/users.js'
+import { create404Error } from './ghost/utils/server.js';
+import { router as catalogRouter } from './catalog/urls.js'
 import { config } from './ghost/app/config.js';
 
 
 config()
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use(catalogRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) =>{
