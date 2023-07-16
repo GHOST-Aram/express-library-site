@@ -7,13 +7,15 @@ import debuger from 'debug';
 
 
 const app = express()
-const use = app.use
 const router = express.Router()
 const server = http.createServer(app);
 const logger = morgan
 const debug = debuger('express-local-library-site:server');
 const createError = createHttpError
 
+const use = (callback) =>{
+    app.use(callback)
+}
 
 
 export {
