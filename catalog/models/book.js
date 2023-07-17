@@ -1,4 +1,4 @@
-import { ModelSchema, Model } from "../../ghost/db/models";
+import { ModelSchema, Model } from "../../ghost/db/model";
 
 const BookSchema = new ModelSchema({
     title: { type: String, required: true},

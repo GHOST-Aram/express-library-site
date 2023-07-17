@@ -1,4 +1,4 @@
-import { Model, ModelSchema } from "../../ghost/db/models"
+import { Model, ModelSchema } from "../../ghost/db/model"
 
 const AuthorSchema = new ModelSchema({
     first_name: {type: String, required: true, maxLength: 100},
@@ -13,5 +13,7 @@ AuthorSchema.virtual('name').get(
 )
 
 AuthorSchema.virtual('url').get(()=> `/catalog/author/${this._id}`)
+
+AuthorSchema.methods.greetAuthor = () =>`Hello ${this.name}, we are delighted.`
 
 export const Author = new Model('Author', AuthorSchema)
