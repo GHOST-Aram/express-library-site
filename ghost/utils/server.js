@@ -1,10 +1,11 @@
-import { debug, app } from '../app/init.js';
 import { 
 	cookieParser, 
 	createError, 
 	express, 
 	logger, 
-	server 
+	server,
+    debug,
+    app 
 } from '../app/init.js';
 
 export const create404Error = () =>{
