@@ -1,3 +1,4 @@
+import { STATIC_DIR, TEMPLATES_DIR, VIEW_ENGINE } from '../../setting.js';
 import { 
     normalizePort, 
     onError, 
@@ -11,7 +12,7 @@ import {
     logRequests,
     listenRequests,
     triggerEvent,
-    serverStatics
+    serveStatics
 } from '../utils/server.js'
   
 const port = normalizePort(process.env.PORT || '3000');
@@ -21,11 +22,11 @@ export const config = () =>{
     triggerEvent('error', onError);
     triggerEvent('listening', onListening);
     setPort(port)
-    setTemplatesDir('templates')
-    setViewEngine('pug')   
+    setTemplatesDir(TEMPLATES_DIR)
+    setViewEngine(VIEW_ENGINE)   
     logRequests('dev')
     parseJSON()
     encodeUrl({ extended: false })
     parseCookie()
-    serverStatics('static')
+    serveStatics(STATIC_DIR)
 }

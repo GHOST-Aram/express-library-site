@@ -24,5 +24,5 @@ const use = (callback) =>{
 
 export {
     app, router, server, express, cookieParser, logger, debug,
-    createError, use, Schema,model
+    createError, use, Schema,model, mongoose
 }

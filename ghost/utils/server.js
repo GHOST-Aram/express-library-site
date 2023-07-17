@@ -78,7 +78,7 @@ export const setPort = (port) =>{
 	app.set('port', port);
 }
 
-export const serverStatics = (dirname) =>{
+export const serveStatics = (dirname) =>{
 	app.use(express.static(dirname))
 }
 
