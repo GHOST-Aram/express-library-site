@@ -1,5 +1,5 @@
 import { app, use } from './ghost/app/init.js';
-import { create404Error } from './ghost/utils/server.js';
+import { create404Error } from './ghost/utils/http-response.js';
 import { router as catalogRouter } from './catalog/urls.js'
 
 use(catalogRouter);
