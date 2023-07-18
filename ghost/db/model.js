@@ -1,10 +1,6 @@
-import { Schema, model } from "../app/init";
+import { Schema, model } from "../app/init.js";
 
-export class ModelSchema extends Schema{
-    constructor(documentDefinition){
-        super(documentDefinition)
-    }
-}
+export class ModelSchema extends Schema{}
 
 export class Model{
     constructor(identifier, modelSchema){
