@@ -1,15 +1,13 @@
 import { config } from '../ghost/app/config.js';
 import { router as catalogRouter } from '../ghost/app/init.js';
-import { 
-    router as booksRouter,
-    index, book_list 
-} from './routes/book.js';
-import { router as authorsRouter, author_list } from './routes/author.js'
-import { 
-    router as bookInstanceRouter, 
-    bookinstance_list 
-} from './routes/book-instance.js'
-import { router as genreRouter, genre_list } from './routes/genre.js'
+import { router as booksRouter } from './routes/book.js';
+import { index, book_list } from './controllers/book.js';
+import { router as authorsRouter } from './routes/author.js'
+import { author_list } from './controllers/author.js';
+import { router as bookInstanceRouter } from './routes/book-instance.js'
+import { bookinstance_list } from './controllers/book-instance.js';
+import { router as genreRouter } from './routes/genre.js'
+import { genre_list } from './controllers/genre.js';
 
 config()
 catalogRouter.get('/', index)

@@ -5,9 +5,12 @@ import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import debuger from 'debug';
 import mongoose from 'mongoose';
+import expressAsychHandler from 'express-async-handler'
+
 
 export const app = express()
 export const router = express.Router()
+export const asyncHandler = expressAsychHandler
 
 export const server = http.createServer(app);
 export const logger = morgan

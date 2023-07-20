@@ -1,9 +1,12 @@
+import { asyncHandler } from "../../ghost/app/init.js"
+
+
 export const author_list = asyncHandler(async (req, res, next)=>{
     res.send('NOT IMPLEMENTED: Author List')
 })
 
 export const author_detail = asyncHandler(async (req, res, next) =>{
-    res.send('NOT IMPLEMENTED: Author detail: ', req.params.id)
+    res.send('NOT IMPLEMENTED: Author detail: ')
 })
 
 export const author_create_get = asyncHandler(async (req, res, next) =>{

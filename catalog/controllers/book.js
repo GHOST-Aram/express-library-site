@@ -1,3 +1,6 @@
+import { asyncHandler } from "../../ghost/app/init.js"
+
+
 export const index = asyncHandler(async (req, res, next) =>{
     res.send('NOT IMPLEMENTED: Site Home Page')
 })
@@ -7,7 +10,7 @@ export const book_list = asyncHandler(async (req, res, next) =>{
 })
 
 export const book_detail = asyncHandler(async (req, res, next) =>{
-    res.send('NOT IMPLEMENTED: Book deatil: ', req.params.id)
+    res.send('NOT IMPLEMENTED: Book deatil: ')
 })
 
 export const book_create_get = asyncHandler(async (req, res, next) =>{

@@ -1,3 +1,6 @@
+import { asyncHandler } from "../../ghost/app/init.js"
+
+
 export const genre_list = asyncHandler( async(req, res, next) =>{
     res.send('NOT IMPELEMENTED: Genre List')
 })

@@ -1,8 +1,9 @@
 import { app } from './ghost/app/init.js';
 import { create404Error } from './ghost/utils/http-response.js';
-import { router as catalogRouter } from './catalog/urls.js'
+import { catalogRouter } from './catalog/urls.js'
 
-app.use(catalogRouter);
+
+app.use('/catalog', catalogRouter)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) =>{
