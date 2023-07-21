@@ -11,11 +11,11 @@ import {
 
 router.get('/create', genre_create_get)
 router.post('/create', genre_create_post)
-router.get('/:id', genre_detail)
 router.get('/:id/delete', genre_delete_get)
 router.post('/:id/delete', genre_delete_post)
 router.get('/:id/update', genre_update_get)
 router.post('/:id/update', genre_update_post)
+router.get('/:id', genre_detail)
 
 export { router }
 

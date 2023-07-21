@@ -1,4 +1,4 @@
-import { ModelSchema, Model } from "../../ghost/db/model";
+import { ModelSchema, Model } from "../../ghost/db/model.js";
 
 const BookInstanceSchema = new ModelSchema({
     book: {type: ModelSchema.Types.ObjectId, ref: 'Book', required: true},

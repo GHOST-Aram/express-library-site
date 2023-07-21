@@ -12,12 +12,12 @@ import { genre_list } from './controllers/genre.js';
 config()
 catalogRouter.get('/', index)
 catalogRouter.get('/authors', author_list)
-catalogRouter.get('books', book_list)
+catalogRouter.get('/books', book_list)
 catalogRouter.get('/bookinstances', bookinstance_list)
 catalogRouter.get('/genres', genre_list)
-catalogRouter.use('/book', booksRouter);
-catalogRouter.use('/author', authorsRouter)
-catalogRouter.use('/bookinstance', bookInstanceRouter)
+catalogRouter.use('/books', booksRouter);
+catalogRouter.use('/authors', authorsRouter)
+catalogRouter.use('/bookinstances', bookInstanceRouter)
 catalogRouter.use('/genres', genreRouter)
 
   

@@ -1,4 +1,4 @@
-import { Model, ModelSchema } from "../../ghost/db/model";
+import { Model, ModelSchema } from "../../ghost/db/model.js";
 
 const GenreSchema = new ModelSchema({
     name: { type: String, require: true, minLength: 3, maxLength: 100 },

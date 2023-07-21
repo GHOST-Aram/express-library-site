@@ -1,4 +1,4 @@
-import { Model, ModelSchema } from "../../ghost/db/model"
+import { Model, ModelSchema } from "../../ghost/db/model.js"
 
 const AuthorSchema = new ModelSchema({
     first_name: {type: String, required: true, maxLength: 100},
